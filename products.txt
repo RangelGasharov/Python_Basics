@@ -1,0 +1,11 @@
+Chair - 50
+Book - 10
+Candy - 1
+Chocolate - 2
+Lamp - 25
+Lamp - 25
+Lamp - 25
+Lamp - 25
+Lamp - 25
+Lamp - 25
+Lamp - 25
