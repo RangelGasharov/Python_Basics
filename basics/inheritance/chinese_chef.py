@@ -1,4 +1,4 @@
-from Chef import Chef
+from basics.inheritance.chef import Chef
 
 
 class ChineseChef(Chef):

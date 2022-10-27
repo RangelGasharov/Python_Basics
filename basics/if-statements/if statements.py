@@ -1,4 +1,3 @@
-
 is_male = False
 is_tall = True
 

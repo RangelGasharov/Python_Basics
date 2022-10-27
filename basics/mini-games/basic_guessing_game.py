@@ -1,4 +1,3 @@
-
 secret_word = "elephant"
 guess = ""
 guess_count = 0

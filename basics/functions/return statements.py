@@ -1,4 +1,3 @@
-
 def cube(num):
     return print(pow(num, 3))
 

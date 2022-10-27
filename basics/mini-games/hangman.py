@@ -1,5 +1,5 @@
 import random
-from Words import word_list
+from words import word_list
 
 
 def get_word():
@@ -58,7 +58,7 @@ def play(word):
 
 
 def display_hangman(tries):
-    stages = [  # final state: head, torso, both arms, and both legs
+    stages = [
         """
            --------
            |      |
@@ -68,7 +68,7 @@ def display_hangman(tries):
            |     / \\
            -
         """,
-        # head, torso, both arms, and one leg
+
         """
            --------
            |      |
@@ -78,7 +78,7 @@ def display_hangman(tries):
            |     / 
            -
         """,
-        # head, torso, and both arms
+
         """
            --------
            |      |
@@ -88,7 +88,7 @@ def display_hangman(tries):
            |      
            -
         """,
-        # head, torso, and one arm
+
         """
            --------
            |      |
@@ -98,7 +98,7 @@ def display_hangman(tries):
            |     
            -
         """,
-        # head and torso
+
         """
            --------
            |      |
@@ -108,7 +108,7 @@ def display_hangman(tries):
            |     
            -
         """,
-        # head
+
         """
            --------
            |      |
@@ -118,7 +118,7 @@ def display_hangman(tries):
            |     
            -
         """,
-        # initial empty state
+
         """
            --------
            |      |
@@ -135,7 +135,7 @@ def display_hangman(tries):
 def main():
     word = get_word()
     play(word)
-    while input("Play Again? (Y/N)").upper() == "Y":
+    while input("Play Again? (Y/N) ").upper() == "Y":
         word = get_word()
         play(word)
 

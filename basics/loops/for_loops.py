@@ -1,4 +1,3 @@
-
 friends = ["Josh", "Marc", "Peter"]
 for friend in friends:
     print(friend)

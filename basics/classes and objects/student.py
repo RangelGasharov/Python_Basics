@@ -1,4 +1,4 @@
-from ClassAndObjects import Student
+from class_and_objects import Student
 
 student1 = Student("Fred", "Architecture", 3.3, False)
 student2 = Student("Julia", "Business", 2.8, True)
