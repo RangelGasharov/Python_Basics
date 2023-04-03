@@ -12,6 +12,7 @@ for i in range(start_x_axes, end_x_axes + 1):
     tangent = (3 * x_coordinates ** 2 - 40 * x_coordinates - 2) * x + (
             x_coordinates ** 3 - 20 * x_coordinates ** 2 - 2 * x_coordinates + 2 -
             (3 * x_coordinates ** 2 - 40 * x_coordinates - 2) * x_coordinates)
+    print(x_coordinates ** 3 - 3 * x_coordinates ** 2)
     plt.plot(x, tangent, linewidth=1, color="red")
 
 plt.plot(x, y, linewidth=2)
