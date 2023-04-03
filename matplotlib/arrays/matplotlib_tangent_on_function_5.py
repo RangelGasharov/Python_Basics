@@ -2,17 +2,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 step_of_calculation = 0.1
-start_x_axes = -10
-end_x_axes = 20
+start_x_axes = -8
+end_x_axes = 5
 
 x = np.arange(start_x_axes, end_x_axes + step_of_calculation, step_of_calculation)
-y = x ** 3 - 20 * x ** 2 - 2 * x + 2
+y = np.sin(x)
 for i in range(start_x_axes, end_x_axes + 1):
     x_coordinates = i
-    tangent = (3 * x_coordinates ** 2 - 40 * x_coordinates - 2) * x + (
-            x_coordinates ** 3 - 20 * x_coordinates ** 2 - 2 * x_coordinates + 2 -
-            (3 * x_coordinates ** 2 - 40 * x_coordinates - 2) * x_coordinates)
-    print(x_coordinates ** 3 - 3 * x_coordinates ** 2)
+    tangent = (np.cos(x_coordinates)) * x + (np.sin(x_coordinates) - np.cos(x_coordinates) * x_coordinates)
     plt.plot(x, tangent, linewidth=1, color="red")
 
 plt.plot(x, y, linewidth=2)
