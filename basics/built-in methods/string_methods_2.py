@@ -51,3 +51,26 @@ s = "-"
 print("Join", s.join(["first", "second", "third"]))
 s = "ljust"
 print("Ljust", s, s.ljust(20, "-"))
+s = "UPPERCASE"
+print("Lower", s, s.lower())
+s = "Random text"
+print("Lstrip", s, s.lstrip("Random "))
+s = "aaabbbccc"
+t = s.maketrans("a", "g")
+print("Maketrans and translate", s, s.translate(t))
+s = "a+b=c"
+print("Partition", s, s.partition("="))
+s = "undefined"
+print("Removeprefix", s, s.removeprefix("un"))
+s = "actually"
+print("Removesuffix", s, s.removesuffix("ly"))
+s = "The result is 7"
+print("Replace", s, s.replace("7", "8"))
+s = "abcdeffedcba"
+print("Rfind", s, s.rfind("a"))
+s = "abbbbcade"
+print("Rindex", s, s.rindex("a"))
+s = "text"
+print("Rjust", s, s.rjust(20, "-"))
+s = "a=b=c=d"
+print("Rjpartition", s, s.rpartition("="))
