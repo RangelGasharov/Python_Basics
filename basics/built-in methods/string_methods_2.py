@@ -74,3 +74,20 @@ s = "text"
 print("Rjust", s, s.rjust(20, "-"))
 s = "a=b=c=d"
 print("Rjpartition", s, s.rpartition("="))
+s = "www.website.com"
+print("RSplit", s, s.rsplit("."))
+print("Split", s, s.split(".", maxsplit=1))
+s = "Redundant data data"
+print("RStrip", s, s.rstrip("data"))
+s = "Line1\n Line2\n Line3"
+print("Splitlines", s, s.splitlines(keepends=True))
+s = "Orange"
+print("Startswith", s, s.startswith("O"))
+s = "Redundant data again again"
+print("Strip", s, s.strip("again"))
+s = "let this be a title"
+print("Title", s, s.title())
+s = "this text is uppercase"
+print("Upper", s, s.upper())
+s = "text"
+print("Zfill", s, s.zfill(10))
