@@ -49,6 +49,22 @@ def function_y_first_derivative_6(x):
     return (9 * x ** 2 + 1) / (3 * x ** 3 + x)
 
 
+def function_y_7(x):
+    return math.tan(x)
+
+
+def function_y_first_derivative_7(x):
+    return 1 / (math.cos(x) ** 2)
+
+
+def function_y_8(x):
+    return (math.sin(x) * math.cos(x)) ** 3
+
+
+def function_y_first_derivative_8(x):
+    return 3 * math.cos(x) ** 4 * math.sin(x) ** 2 - 3 * math.cos(x) ** 2 * math.sin(x) ** 4
+
+
 def find_zero_point(x, function, function_derivative):
     for i in range(1, 100):
         gradient_tangent = function_derivative(x)
@@ -90,4 +106,12 @@ print(function_y_5(find_zero_point(1, function_y_5, function_y_first_derivative_
 
 print("Function 6")
 print(f"Zero point of function: x = {find_zero_point(2, function_y_6, function_y_first_derivative_6)}")
-print(function_y_6(find_zero_point(1, function_y_6, function_y_first_derivative_6)))
+print(function_y_6(find_zero_point(1, function_y_6, function_y_first_derivative_6)), "\n")
+
+print("Function 7")
+print(f"Zero point of function: x = {find_zero_point(6, function_y_7, function_y_first_derivative_7)}")
+print(function_y_7(find_zero_point(6, function_y_7, function_y_first_derivative_7)), "\n")
+
+print("Function 8")
+print(f"Zero point of function: x = {find_zero_point(8, function_y_8, function_y_first_derivative_8)}")
+print(function_y_8(find_zero_point(8, function_y_8, function_y_first_derivative_8)), "\n")
