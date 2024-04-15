@@ -35,7 +35,33 @@ def correlation():
     plt.show()
 
 
+def cleaning_data():
+    df = pd.read_csv("dirtydata.csv", sep=",")
+    df['Date'] = pd.to_datetime(df['Date'], format="mixed")
+    df.dropna(subset=['Date'], inplace=True)
+
+    print(df.head(10))
+    print(df.tail(10))
+    print(df.info())
+
+    x = df["Calories"].mean()
+    # df["Calories"].fillna(x, inplace=True)
+    df.fillna({"Calories": x}, inplace=True)
+
+    d = df["Duration"].mean()
+    for x in df.index:
+        if df.loc[x, "Duration"] > 2 * d:
+            df.loc[x, "Duration"] = int(d)
+    # df.dropna(inplace=True)
+
+    # new_df = df.dropna()
+    # print(new_df.info())
+
+    print(df.info())
+
+
 # read_csv("data.csv")
 # read_json("https://www.w3schools.com/python/pandas/data.js")
 # correlation()
-series()
+# series()
+cleaning_data()
