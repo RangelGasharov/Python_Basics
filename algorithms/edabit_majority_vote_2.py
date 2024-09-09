@@ -1,17 +1,17 @@
-def majority_vote(voting_list):
-    dictionary = {}
-    for x in voting_list:
-        if x in dictionary:
-            dictionary[x] += 1
+def majority_vote(votes):
+    if len(votes) == 0:
+        return None
+    current_majority = votes[0]
+    leading_votes = 1
+    for vote in votes:
+        if vote != current_majority:
+            if leading_votes < 1:
+                current_majority = vote
+            else:
+                leading_votes -= 1
         else:
-            dictionary[x] = 1
-    max_count = 0
-    majority_element = None
-    for key, count in dictionary.items():
-        if count > max_count and count > len(voting_list) / 2:
-            max_count = count
-            majority_element = key
-    return majority_element
+            leading_votes += 1
+    return (leading_votes >= 1) * current_majority or None
 
 
 print(majority_vote([]))
