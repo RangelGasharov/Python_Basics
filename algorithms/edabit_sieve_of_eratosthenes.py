@@ -1,6 +1,3 @@
-import math
-
-
 def eratosthenes(num):
     result = []
     prime_numbers = [True for i in range(num + 1)]
@@ -11,7 +8,7 @@ def eratosthenes(num):
                 prime_numbers[i] = False
         current_prime_number += 1
 
-    for i in range(2, num+1):
+    for i in range(2, num + 1):
         if prime_numbers[i]:
             result.append(i)
     return result
