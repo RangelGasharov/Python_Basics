@@ -20,7 +20,7 @@
       ],
       [
         "to detect sth.",
-        "etw. wahrnehmen/ entdecken; hier: etw. auffangen/empfangen"
+        "etw. wahrnehmen/entdecken; hier: etw. auffangen/empfangen"
       ],
       [
         "to map sth.",
@@ -121,5 +121,12 @@
     ]
   },
   {
+    "unit_id": "UNIT_2",
+    "vocabularies": [
+      [
+        "word",
+        "Wort"
+      ]
+    ]
   }
 ]
