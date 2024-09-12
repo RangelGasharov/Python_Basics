@@ -36,13 +36,13 @@ def start_vocabulary_check():
     while len(vocabularies_to_learn) > 0:
         random_index = get_random_index(len(vocabularies_to_learn) - 1)
         random_vocabulary = vocabularies_to_learn[random_index]
-        print("random index 1: ", random_index)
         user_answer = input(f"What is the translation of the following phrase: {random_vocabulary[1]}?\n")
         if user_answer == random_vocabulary[0]:
             random_vocabulary[2] += 1
         else:
             print(f"The answer is sadly false. The right answer would be: {random_vocabulary[0]}")
-        if random_vocabulary[2] == 2:
+            random_vocabulary[2] -= 1
+        if random_vocabulary[2] == 3:
             del vocabularies_to_learn[random_index]
     print("Unit finished!")
 
