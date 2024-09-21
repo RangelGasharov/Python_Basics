@@ -1,4 +1,5 @@
 vowels = {"a", "e", "i", "o", "u"}
+months = {1: "A", 2: "B", 3: "C", 4: "D", 5: "E", 6: "H", 7: "L", 8: "M", 9: "P", 10: "R", 11: "S", 12: "T"}
 
 
 def fiscal_code(person_information):
@@ -6,6 +7,10 @@ def fiscal_code(person_information):
     person_name = person_information["name"]
     person_gender = person_information["gender"]
     person_date_of_birth = person_information["dob"]
+    surname_code = get_surname_code(person_surname)
+    name_code = get_name_code(person_name)
+    birthdate_gender_code = get_birthdate_gender_code(person_gender, person_date_of_birth)
+    return surname_code + name_code + birthdate_gender_code
 
 
 def get_surname_code(surname):
@@ -72,11 +77,33 @@ def get_name_code(name):
         if len(word_vowels) > 0:
             for i in range(0, 3 - len(word_consonants)):
                 result += word_vowels[i]
+        return result
 
 
-def get_birth_gender_code(gender, date_of_birth):
-    return ""
+def get_birthdate_gender_code(gender, date_of_birth):
+    birthdate_dates = []
+    current_date = ""
+    for i in range(len(date_of_birth)):
+        if date_of_birth[i] == "/":
+            birthdate_dates.append(current_date)
+            current_date = ""
+        else:
+            current_date += date_of_birth[i]
+    birthdate_dates.append(current_date)
+    birthdate_day = birthdate_dates[0]
+    birthdate_month = months[int(birthdate_dates[1])]
+    birthdate_year = birthdate_dates[2][2:]
+    if gender == "M":
+        if int(birthdate_day) < 10:
+            birthdate_day = "0" + birthdate_day
+    else:
+        birthdate_day = str(int(birthdate_day) + 40)
+    return birthdate_year + birthdate_month + birthdate_day
 
 
-print(get_surname_code("Curie"))
-print(get_name_code("Brendan"))
+print(fiscal_code({"name": "Matt", "surname": "Edabit", "gender": "M", "dob": "1/1/1900"}))
+print(fiscal_code({"name": "Helen", "surname": "Yu", "gender": "F", "dob": "1/12/1950"}))
+print(fiscal_code({"name": "Mickey", "surname": "Mouse", "gender": "M", "dob": "16/1/1928"}))
+print(fiscal_code({"name": "Brendan", "surname": "Eich", "gender": "M", "dob": "1/12/1961"}))
+print(fiscal_code({"name": "Al", "surname": "Capone", "gender": "M", "dob": "17/1/1899"}))
+print(fiscal_code({"name": "Marie", "surname": "Curie", "gender": "F", "dob": "7/11/1867"}))
