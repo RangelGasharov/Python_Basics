@@ -124,8 +124,112 @@
     "unit_id": "UNIT_2",
     "vocabularies": [
       [
-        "word",
-        "Wort"
+        "conservation of wildlife",
+        "Artenschutz"
+      ],
+      [
+        "endangered",
+        "gefährdet, vom Aussterben bedroht"
+      ],
+      [
+        "logging",
+        "Abholzung"
+      ],
+      [
+        "it's like looking for a needle in a haystack",
+        "das ist, als würde man eine Stecknadel im Heuhaufen suchen"
+      ],
+      [
+        "aspiring",
+        "aufstrebend, ehrgeizig"
+      ],
+      [
+        "tortoise",
+        "(Land-)Schildkröte"
+      ],
+      [
+        "freshwater turtle",
+        "Sumpschildkröte"
+      ],
+      [
+        "to endure sth.",
+        "etw. überstehen/ertragen"
+      ],
+      [
+        "to wade sth.",
+        "etw. durchwaten"
+      ],
+      [
+        "extinction",
+        "Aussterben"
+      ],
+      [
+        "odds",
+        "Chancen, Aussichten, Wahrscheinlichkeit"
+      ],
+      [
+        "to be worth the effort",
+        "die Mühe wert sein"
+      ],
+      [
+        "to lay claim to sth.",
+        "auf etw. Anspruch erheben"
+      ],
+      [
+        "to capture sth.",
+        "etw. (ein)fangen"
+      ],
+      [
+        "softshell turtle",
+        "Weichschildkröte"
+      ],
+      [
+        "to nurture sb.",
+        "hier: jmdn. fördern/aufbauen"
+      ],
+      [
+        "bright",
+        "intelligent, gescheit"
+      ],
+      [
+        "conservationist",
+        "Naturschützer/in"
+      ],
+      [
+        "severely",
+        "massiv, in schlimmer Weise"
+      ],
+      [
+        "biodiversity",
+        "Artenvielfalt"
+      ],
+      [
+        "thesis",
+        "wissenschaftliche Arbeit, Diplomarbeit"
+      ],
+      [
+        "armed",
+        "bewaffnet"
+      ],
+      [
+        "logger",
+        "Holzfäller/in"
+      ],
+      [
+        "forest ranger",
+        "Förster/in"
+      ],
+      [
+        "to escape unharmed",
+        "unversehrt davonkommen"
+      ],
+      [
+        "to feel humbled",
+        "tief bewegt sein, Demut empfinden"
+      ],
+      [
+        "to cross frontiers",
+        "Grenzen überschreiten"
       ]
     ]
   }
