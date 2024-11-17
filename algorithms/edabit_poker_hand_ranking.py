@@ -14,6 +14,8 @@ def poker_hand_ranking(cards_list):
         return "Full House"
     if is_flush(card_transformed):
         return "Flush"
+    if is_straight(card_transformed):
+        return "Straight"
     if amount_of_triads == 1:
         return "Three of a Kind"
     if amount_of_pairs == 2:
@@ -33,7 +35,7 @@ def get_card_value(card_value_string):
 def is_flush(cards_list):
     cards_list.sort()
     for i in range(1, len(cards_list)):
-        if cards_list[i][0] <= cards_list[i - 1][0]:
+        if cards_list[i][1] != cards_list[i - 1][1]:
             return False
     return True
 
@@ -43,7 +45,7 @@ def is_straight_flush(cards_list):
     for i in range(1, len(cards_list)):
         if cards_list[i][1] != cards_list[i - 1][1]:
             return False
-        if cards_list[i][0] <= cards_list[i - 1][0]:
+        if cards_list[i][0] != cards_list[i - 1][0] + 1:
             return False
     return True
 
@@ -96,7 +98,21 @@ def get_amount_of_triads(cards_list):
     return amount_of_triads
 
 
-print(poker_hand_ranking(["Ah", "As", "Qc", "3d", "9d"]))
-print(poker_hand_ranking(["Ad", "Qd", "Jd", "Kd", "10d"]))
-print(poker_hand_ranking(["9d", "Qd", "Jd", "Kd", "10d"]))
-print(poker_hand_ranking(["9d", "9s", "9c", "9h", "10d"]))
+def is_straight(cards_list):
+    cards_list.sort()
+    for i in range(1, len(cards_list)):
+        if cards_list[i][0] != cards_list[i - 1][0] + 1:
+            return False
+    return True
+
+
+print(poker_hand_ranking(["10h", "Jh", "Qh", "Ah", "Kh"]))
+print(poker_hand_ranking(["3h", "5h", "Qs", "9h", "Ad"]))
+print(poker_hand_ranking(["10s", "10c", "8d", "10d", "10h"]))
+print(poker_hand_ranking(["4h", "9s", "2s", "2d", "Ad"]))
+print(poker_hand_ranking(["10s", "9s", "8s", "6s", "7s"]))
+print(poker_hand_ranking(["10c", "9c", "9s", "10s", "9h"]))
+print(poker_hand_ranking(["8h", "2h", "8s", "3s", "3c"]))
+print(poker_hand_ranking(["Jh", "9h", "7h", "5h", "2h"]))
+print(poker_hand_ranking(["Ac", "Qc", "As", "Ah", "2d"]))
+print(poker_hand_ranking(["10h", "Jh", "Qs", "Ks", "Ac"]))
