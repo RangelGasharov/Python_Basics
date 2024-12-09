@@ -69,39 +69,38 @@ class ParticleEquilateralPolygon:
 
         for i in range(amount_of_sides):
             self.target_points.append(
-                [round(math.sin(i * angle_sector) * radius, 0), round(math.cos(i * angle_sector) * radius, 0)])
+                [math.sin(i * angle_sector) * radius + self.center_x,
+                 math.cos(i * angle_sector) * radius + self.center_y])
         self.particle_turtle = turtle.Turtle()
         self.particle_turtle.shape("circle")
         self.particle_turtle.color(self.color)
         self.particle_turtle.penup()
+        self.x = self.target_points[0][0]
+        self.y = self.target_points[0][1]
         self.particle_turtle.goto(self.x, self.y)
         self.particle_turtle.shapesize(stretch_wid=self.particle_size, stretch_len=self.particle_size)
-        self.particle_turtle.goto(self.target_points[0][0], self.target_points[0][1])
         self.particle_turtle.pendown()
-        self.current_x = self.target_points[0][0]
-        self.current_y = self.target_points[0][1]
 
     def animate(self):
         target_x = self.target_points[self.index_current_target_point][0]
         target_y = self.target_points[self.index_current_target_point][1]
-        dx = target_x - self.current_x
-        dy = target_y - self.current_y
+        dx = target_x - self.x
+        dy = target_y - self.y
         distance = math.sqrt(dx ** 2 + dy ** 2)
 
         if distance < self.speed:
-            self.current_x = target_x
-            self.current_y = target_y
+            self.x = target_x
+            self.y = target_y
             self.index_current_target_point = (self.index_current_target_point + 1) % self.amount_of_sides
         else:
-            self.current_x += (dx / distance) * self.speed
-            self.current_y += (dy / distance) * self.speed
+            self.x += (dx / distance) * self.speed
+            self.y += (dy / distance) * self.speed
 
-        self.particle_turtle.goto(self.current_x, self.current_y)
+        self.particle_turtle.goto(self.x, self.y)
 
     def set_position(self, x, y):
         self.x = x
         self.y = y
-        self.particle_turtle.goto(self.x, self.y)
 
 
 screen = turtle.Screen()
@@ -110,16 +109,12 @@ screen.title("Partikel im Rechteck")
 screen.setup(width=600, height=600)
 turtle.speed(0)
 
-# particle_1 = Particle(-100, -100, 200, 200, 11, .5, "#FFFFFF")
-# particle_2 = Particle(200, 200, 200, 200, 5, .5, "#1AA8F9")
-# particle_3 = Particle(particle_1.x, particle_2.y, 0, 0, 0, .5, "#FF5733")
-particle_4 = ParticleEquilateralPolygon(0, 0, 100, 10, 10, 0.5, "#80AF25")
-particle_5 = ParticleEquilateralPolygon(0, 0, 100, 5, 10, 0.5, "#AFAFAF")
+particle_1 = ParticleEquilateralPolygon(400, 200, 200, 7, 4, 0.5, "#80AF25")
+particle_2 = ParticleEquilateralPolygon(0, -200, 200, 5, 4, 0.5, "#F32F8D")
+particle_3 = Particle(particle_1.x, particle_2.y, 0, 0, 0, .5, "#B4DD1E")
 
 while True:
-    # particle_3.set_position(particle_1.x, particle_2.y)
-    # particle_1.animate()
-    # particle_2.animate()
-    particle_4.animate()
-    particle_5.animate()
+    particle_3.set_position(particle_1.x, particle_2.y)
+    particle_1.animate()
+    particle_2.animate()
     screen.update()
