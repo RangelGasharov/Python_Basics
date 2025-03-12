@@ -1,12 +1,14 @@
 def grouping(words):
     groups = {}
-    for i in range(len(words)):
-        key = get_amount_of_capital_letters(words[i])
+    for word in words:
+        key = get_amount_of_capital_letters(word)
         if key not in groups:
-            groups[key] = [words[i]]
+            groups[key] = [word]
         else:
-            groups[key].append(words[i])
-    return groups
+            groups[key].append(word)
+    for key in groups:
+        groups[key].sort(key=str.lower)
+    return sorted(groups.items())
 
 
 def get_amount_of_capital_letters(word):
